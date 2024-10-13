@@ -26,21 +26,31 @@ local tabs = UILibrary:CreateTab(window, {"Tab 1", "Tab 2", "Tab 3"})
 
 UILibrary:CreateButton(tabs[1], "Click Me!", UDim2.new(0, 100, 0, 50), UDim2.new(0, 10, 0, 10), 
 function()
+
     print("Button Clicked!")
+    
 end)
 
 -- Adding Input field to the second tab
 
 local textBox = UILibrary:CreateTextBox(tabs[2], "Enter text here...", UDim2.new(0, 200, 0, 50), UDim2.new(0, 10, 0, 10))
+
 textBox.FocusLost:Connect(function(enterPressed)
+
     if enterPressed then
+    
         print(textBox.Text) -- Function when user press Enter after typing text
+        
     end
+    
 end)
 
 -- Adding checkbox to the third tab
 
 UILibrary:CreateCheckBox(tabs[3], "Enable feature", UDim2.new(0, 200, 0, 30), UDim2.new(0, 10, 0, 70),
+
 function(isChecked)
+
     print("Checkbox status:", isChecked)
+    
 end)
