@@ -41,3 +41,10 @@ function(isChecked)
     print("Checkbox status:", isChecked)
 end)
 ```
+
+SCREENSHOTS:
+=
+![RobloxScreenShot20241013_175557137](https://github.com/user-attachments/assets/cd30c438-49b7-459f-99fe-7457bd1f0b3f)
+![RobloxScreenShot20241013_175552245](https://github.com/user-attachments/assets/6620f4d1-34f5-49cd-be08-f6dae8092204)
+![RobloxScreenShot20241013_175545404](https://github.com/user-attachments/assets/9e6ac7c4-3da7-46e6-ab3c-b3e42458c11f)
+![RobloxScreenShot20241013_175601691](https://github.com/user-attachments/assets/54b2fb56-3b6c-424d-9455-bf6df82e9306)
