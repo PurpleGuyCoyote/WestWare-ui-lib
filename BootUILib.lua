@@ -1,4 +1,4 @@
--- Создаем библиотеку xd
+-- Создаем библиотеку
 local UILibrary = {}
 
 -- Функция для создания окна (Frame) с возможностью перетаскивания
@@ -15,8 +15,10 @@ function UILibrary:CreateWindow(title, size, position)
     frame.BorderSizePixel = 0
     frame.Parent = screenGui
 
-    -- Угол округления
-    frame.BorderRadius = UDim.new(0, 10)
+    -- Добавляем закругленные углы
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 10)  -- Угол закругления в 10 пикселей
+    corner.Parent = frame
     
     local titleBar = Instance.new("Frame")
     titleBar.Size = UDim2.new(1, 0, 0, 30)
@@ -119,7 +121,9 @@ function UILibrary:CreateButton(parent, text, size, position, callback)
     button.Parent = parent
 
     -- Закругленные углы
-    button.BorderRadius = UDim.new(0, 5)
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 5)
+    corner.Parent = button
 
     button.MouseButton1Click:Connect(function()
         if callback then
@@ -145,7 +149,9 @@ function UILibrary:CreateTextBox(parent, placeholderText, size, position)
     textBox.Parent = parent
 
     -- Закругленные углы
-    textBox.BorderRadius = UDim.new(0, 5)
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 5)
+    corner.Parent = textBox
 
     return textBox
 end
@@ -164,6 +170,11 @@ function UILibrary:CreateCheckBox(parent, labelText, size, position, callback)
     box.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
     box.Text = ""
     box.Parent = checkBox
+
+    -- Закругленные углы для переключателя
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 5)
+    corner.Parent = box
 
     local label = Instance.new("TextLabel")
     label.Size = UDim2.new(1, -40, 1, 0)
